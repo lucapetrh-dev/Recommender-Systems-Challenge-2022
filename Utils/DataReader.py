@@ -62,7 +62,7 @@ def load_icm_df(icm_file):
 
 
 def load_urm_df():
-    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/MixedRatings.csv')
+    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/URM_updated.csv')
     df_original = pd.read_csv(filepath_or_buffer=urm_path)
 
     df_original.columns = ["UserID", "ItemID", "Data"]
