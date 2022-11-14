@@ -19,33 +19,56 @@ def load_urm():
 
 
 def load_target():
-
     df_original = pd.read_csv('../Dataset/data_target_users_test.csv')
     df_original.columns = ['UserID']
     return df_original
 
 
-def load_icm(icm_file):
-    df_original = load_icm_df(icm_file)
+def load_icm():
+    df_original = load_icm_df()
+
+    item_id_list = df_original['ItemID'].values
+    feature_id_list = df_original['FeatureID'].values
+    data_list = df_original['Data'].values
+
+    csr_matrix = sps.csr_matrix((data_list, (item_id_list, feature_id_list)))
+    csr_matrix = csr_matrix.astype(dtype=np.int32)
+
+    return csr_matrix
+
+
+def load_merged_icm():
+    df_original = load_merged_icm_df()
 
     item_id_list = df_original['item_id'].values
     type_list = df_original['type'].values
     length_list = df_original['length'].values
 
-    csr_matrix = sps.csr_matrix(type_list, (item_id_list,), range(3))
+    csr_matrix = sps.csr_matrix((length_list, (item_id_list, type_list)))
     csr_matrix = csr_matrix.astype(dtype=np.int32)
 
+    return csr_matrix
+
+
+def load_icm_df():
+    df_original = pd.read_csv("Dataset/ICM_updated.csv",
+                              header=1,
+                              dtype={0: np.int32,
+                                     1: np.int32,
+                                     2: np.int32})
+    df_original.columns = ["ItemID", "FeatureID", "Data"]
+    # print("Resultant CSV after joining all CSV files at a particular location...")
     return df_original
 
 
-def load_icm_df(icm_file):
-    ICM_length = pd.read_csv("../Dataset/data_ICM_length.csv",
+def load_merged_icm_df():
+    ICM_length = pd.read_csv("Dataset/data_ICM_length.csv",
                              header=1,
                              dtype={0: np.int32,
                                     1: np.int32,
                                     2: np.int32})
     ICM_length.columns = ["item_id", "feature_id", "length"]
-    ICM_type = pd.read_csv("../Dataset/data_ICM_type.csv",
+    ICM_type = pd.read_csv("Dataset/data_ICM_type.csv",
                            header=1,
                            dtype={0: np.int32,
                                   1: np.int32,
@@ -71,7 +94,7 @@ def load_urm_df():
 
 
 def load_inverted_urm_df():
-    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/inverted_interactions.csv')
+    urm_path = os.path.join(os.path.dirname(__file__), 'Dataset/inverted_interactions.csv')
     df_original = pd.read_csv(filepath_or_buffer=urm_path,
                               header=1,
                               dtype={0: np.int32,
