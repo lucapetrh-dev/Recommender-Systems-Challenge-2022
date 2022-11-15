@@ -51,7 +51,7 @@ def load_merged_icm():
 
 
 def load_icm_df():
-    df_original = pd.read_csv("Dataset/ICM_updated.csv",
+    df_original = pd.read_csv("Dataset/data_ICM_length.csv",
                               header=1,
                               dtype={0: np.int32,
                                      1: np.int32,
@@ -85,7 +85,7 @@ def load_merged_icm_df():
 
 
 def load_urm_df():
-    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/URM_views_clicks_percentage.csv')
+    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/URM_Binary_Ratings.csv')
     df_original = pd.read_csv(filepath_or_buffer=urm_path)
 
     df_original.columns = ["UserID", "ItemID", "Data"]

@@ -5,7 +5,7 @@ from Recommenders.DataIO import DataIO
 from Recommenders.Recommender_import_list import *
 from Recommenders.Recommender_utils import check_matrix
 
-output_root_path = "./result_experiments/"
+output_root_path = "Experiments/"
 
 
 class Hybrid_SlimElastic_Rp3(BaseRecommender):
@@ -20,10 +20,10 @@ class Hybrid_SlimElastic_Rp3(BaseRecommender):
         self.rp3 = RP3betaRecommender(URM_train)
 
     def fit(self, alpha=0.5):
-        self.slim.load_model(output_root_path, file_name="slim742.zip")
+        # self.slim.load_model(output_root_path, file_name="slim742.zip")
 
-        # self.slim.fit(topK=453, l1_ratio=0.00029920499017254754, alpha=0.10734084960757517)
-        self.rp3.fit(topK=40, alpha=0.4208737801266599, beta=0.5251543657397256, normalize_similarity=True)
+        self.slim.fit(topK=405, l1_ratio=0.0010299956370568744, alpha=0.01)
+        self.rp3.fit(topK=167, alpha=1.0, beta=0.4520495673133021, implicit=True)
         self.fit_no_cached(path_slim=None, path_rp3=None, alpha=alpha)
 
     def fit_cached(self, path_slim, path_rp3, alpha=0.5):
