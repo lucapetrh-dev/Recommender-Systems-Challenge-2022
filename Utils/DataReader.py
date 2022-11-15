@@ -19,7 +19,7 @@ def load_urm():
 
 
 def load_target():
-    df_original = pd.read_csv('../Dataset/data_target_users_test.csv')
+    df_original = pd.read_csv('Dataset/data_target_users_test.csv')
     df_original.columns = ['UserID']
     return df_original
 
@@ -85,7 +85,7 @@ def load_merged_icm_df():
 
 
 def load_urm_df():
-    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/URM_updated.csv')
+    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/URM_views_clicks_percentage.csv')
     df_original = pd.read_csv(filepath_or_buffer=urm_path)
 
     df_original.columns = ["UserID", "ItemID", "Data"]
