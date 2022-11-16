@@ -71,7 +71,7 @@ if __name__ == '__main__':
                               }
 
 
-    output_root_path = "./Experiments/"
+    output_root_path = "../Experiments/"
 
     # If directory does not exist, create
     if not os.path.exists(output_root_path):
