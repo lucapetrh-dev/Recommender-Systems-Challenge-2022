@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import scipy.sparse as sps
 import numpy as np
+import tqdm
 
 
 def load_urm():
@@ -105,4 +106,46 @@ def load_inverted_urm_df():
     df_original.columns = ["UserID", "ItemID", "Impression", "Data"]
 
     return df_original
+
+def load_urm_icm():
+    urm = load_urm()
+    icm = load_icm()
+    urm_icm = sps.vstack([urm, icm.T])
+    urm_icm = urm_icm.tocsr()
+
+    return urm_icm
+
+def load_urm_coo():
+    URM_df = load_urm_df()
+    URM_coo = sps.coo_matrix((URM_df["Data"].values, (URM_df["UserID"].values, URM_df["ItemID"].values)))
+    return URM_coo
+
+def get_k_folds_URM(k=3):
+    URM_coo = load_urm_coo()
+
+    n_interactions = URM_coo.nnz
+    n_interactions_per_fold = int(URM_coo.nnz / k) + 1
+    temp = np.arange(k).repeat(n_interactions_per_fold)
+    np.random.seed(0)
+    np.random.shuffle(temp)
+    assignment_to_fold = temp[:n_interactions]
+
+    URM_trains = []
+    URM_tests = []
+
+    for i in tqdm(range(k), desc='Generating folds'):
+        train_mask = assignment_to_fold != i
+        test_mask = assignment_to_fold == i
+        URM_train_csr = sps.csr_matrix((URM_coo.data[train_mask],
+                                        (URM_coo.row[train_mask], URM_coo.col[train_mask])),
+                                       shape=URM_coo.shape)
+        URM_test_csr = sps.csr_matrix((URM_coo.data[test_mask],
+                                       (URM_coo.row[test_mask], URM_coo.col[test_mask])),
+                                      shape=URM_coo.shape)
+
+        URM_trains.append(URM_train_csr)
+        URM_tests.append(URM_test_csr)
+
+    return URM_trains, URM_tests
+
 # %%

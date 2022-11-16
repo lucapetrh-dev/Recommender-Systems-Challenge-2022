@@ -14,8 +14,7 @@ import os, multiprocessing
 from functools import partial
 
 
-
-from Data_manager.Movielens.Movielens1MReader import Movielens1MReader
+from Utils.DataReader import load_urm, load_icm
 from Data_manager.split_functions.split_train_validation_random_holdout import split_train_in_two_percentage_global_sample
 
 from HyperparameterTuning.run_hyperparameter_search import runHyperparameterSearch_Collaborative, runHyperparameterSearch_Content, runHyperparameterSearch_Hybrid
@@ -35,13 +34,12 @@ def read_data_split_and_search():
 
 
 
-    dataReader = Movielens1MReader()
-    dataset = dataReader.load_data()
+    URM_all = load_urm()
 
-    URM_train, URM_test = split_train_in_two_percentage_global_sample(dataset.get_URM_all(), train_percentage = 0.80)
-    URM_train, URM_validation = split_train_in_two_percentage_global_sample(URM_train, train_percentage = 0.80)
+    URM_train, URM_test = split_train_in_two_percentage_global_sample(URM_all, train_percentage = 0.85)
+    URM_train, URM_validation = split_train_in_two_percentage_global_sample(URM_train, train_percentage = 0.85)
 
-    output_folder_path = "result_experiments/"
+    output_folder_path = "Experiments/"
 
 
     # If directory does not exist, create
@@ -119,7 +117,7 @@ def read_data_split_and_search():
 
     ################################################################################################
     ###### Content Baselines
-
+    """
     for ICM_name, ICM_object in dataset.get_loaded_ICM_dict().items():
 
         try:
@@ -172,7 +170,7 @@ def read_data_split_and_search():
             print("On recommender {} Exception {}".format(ItemKNN_CFCBF_Hybrid_Recommender, str(e)))
             traceback.print_exc()
 
-
+    """
 
 
 

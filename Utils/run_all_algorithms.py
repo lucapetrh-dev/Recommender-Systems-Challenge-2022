@@ -1,8 +1,8 @@
 
 from Recommenders.Recommender_import_list import *
 
-from Data_manager.Movielens.Movielens1MReader import Movielens1MReader
-from Data_manager.DataSplitter_leave_k_out import DataSplitter_leave_k_out
+from Data_manager.split_functions.split_train_validation_random_holdout import split_train_in_two_percentage_global_sample
+from Utils.DataReader import load_urm, load_icm, load_target
 from Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
 from Recommenders.BaseCBFRecommender import BaseItemCBFRecommender, BaseUserCBFRecommender
 from Evaluation.Evaluator import EvaluatorHoldout
@@ -23,14 +23,10 @@ def _get_instance(recommender_class, URM_train, ICM_all, UCM_all):
 if __name__ == '__main__':
 
 
-    dataset_object = Movielens1MReader()
-
-    dataSplitter = DataSplitter_leave_k_out(dataset_object, k_out_value=2)
-
-    dataSplitter.load_data()
-    URM_train, URM_validation, URM_test = dataSplitter.get_holdout_split()
-    ICM_all = dataSplitter.get_loaded_ICM_dict()["ICM_genres"]
-    UCM_all = dataSplitter.get_loaded_UCM_dict()["UCM_all"]
+    URM_all = load_urm()
+    URM_train, URM_test = split_train_in_two_percentage_global_sample(URM_all, train_percentage = 0.85)
+    URM_train, URM_validation = split_train_in_two_percentage_global_sample(URM_train, train_percentage = 0.85)
+    ICM_all = load_icm()
 
     recommender_class_list = [
         Random,
@@ -71,7 +67,7 @@ if __name__ == '__main__':
                               }
 
 
-    output_root_path = "../Experiments/"
+    output_root_path = "Experiments/"
 
     # If directory does not exist, create
     if not os.path.exists(output_root_path):

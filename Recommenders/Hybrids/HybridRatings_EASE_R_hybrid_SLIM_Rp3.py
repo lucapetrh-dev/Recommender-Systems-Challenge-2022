@@ -9,7 +9,7 @@ from Recommenders.Hybrids.HybridSimilarity_SLIM_Rp3 import HybridSimilarity_SLIM
 from Recommenders.MatrixFactorization.PureSVDRecommender import PureSVDRecommender
 from Recommenders.Recommender_utils import check_matrix
 from Recommenders.SLIM.SLIMElasticNetRecommender import SLIMElasticNetRecommender
-from reader import load_icm
+from Utils.DataReader import load_icm
 
 output_root_path = "./result_experiments/"
 

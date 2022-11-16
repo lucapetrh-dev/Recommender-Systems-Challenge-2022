@@ -11,8 +11,8 @@ import traceback, os, shutil
 from Recommenders.BaseCBFRecommender import BaseItemCBFRecommender, BaseUserCBFRecommender
 
 from Evaluation.Evaluator import EvaluatorHoldout, EvaluatorNegativeItemSample
-from Data_manager.Movielens.Movielens1MReader import Movielens1MReader
-from Data_manager.DataSplitter_leave_k_out import DataSplitter_leave_k_out
+from Data_manager.split_functions.split_train_validation_random_holdout import split_train_in_two_percentage_global_sample
+from Utils.DataReader import load_urm, load_icm, load_target
 from Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
 
 
@@ -40,18 +40,14 @@ def run_recommender(recommender_class):
         os.makedirs(temp_save_file_folder)
 
     try:
-        dataset_object = Movielens1MReader()
-
-        dataSplitter = DataSplitter_leave_k_out(dataset_object, k_out_value=2)
-
-        dataSplitter.load_data()
-        URM_train, URM_validation, URM_test = dataSplitter.get_holdout_split()
-        ICM_all = dataSplitter.get_loaded_ICM_dict()["ICM_genres"]
-        UCM_all = dataSplitter.get_loaded_UCM_dict()["UCM_all"]
+        URM_all = load_urm()
+        URM_train, URM_test = split_train_in_two_percentage_global_sample(URM_all, train_percentage = 0.85)
+        URM_train, URM_validation = split_train_in_two_percentage_global_sample(URM_train, train_percentage = 0.85)
+        ICM_all = load_icm()
 
         write_log_string(log_file, "On Recommender {}\n".format(recommender_class))
 
-        recommender_object = _get_instance(recommender_class, URM_train, ICM_all, UCM_all)
+        recommender_object = _get_instance(recommender_class, URM_train, ICM_all)
 
         if isinstance(recommender_object, Incremental_Training_Early_Stopping):
             fit_params = {"epochs": 15}
@@ -84,7 +80,7 @@ def run_recommender(recommender_class):
 
 
 
-        recommender_object = _get_instance(recommender_class, URM_train, ICM_all, UCM_all)
+        recommender_object = _get_instance(recommender_class, URM_train, ICM_all)
         recommender_object.load_model(temp_save_file_folder, file_name="temp_model")
 
         evaluator = EvaluatorHoldout(URM_test, [5], exclude_seen = True)
@@ -118,7 +114,7 @@ from Recommenders.Recommender_import_list import *
 if __name__ == '__main__':
 
 
-    log_file_name = "./result_experiments/run_test_recommender.txt"
+    log_file_name = "Experiments/run_test_recommender.txt"
 
 
     recommender_list = [
@@ -127,7 +123,7 @@ if __name__ == '__main__':
         GlobalEffects,
         UserKNNCFRecommender,
         ItemKNNCFRecommender,
-        ItemKNNCBFRecommender,
+        #ItemKNNCBFRecommender,
         P3alphaRecommender,
         RP3betaRecommender,
         SLIM_BPR_Cython,
@@ -150,3 +146,7 @@ if __name__ == '__main__':
     # pool = multiprocessing.Pool(processes=int(multiprocessing.cpu_count()), maxtasksperchild=1)
     # resultList = pool.map(run_dataset, dataset_list)
 
+
+#%%
+
+#%%
