@@ -22,7 +22,7 @@ from Recommenders.Hybrids.Hybrid_SlimElastic_Rp3_PureSVD import Hybrid_SlimElast
 from Recommenders.Hybrids.scores.ScoresHybridRP3betaKNNCBF import ScoresHybridRP3betaKNNCBF
 from Recommenders.Recommender_import_list import *
 from Recommenders.Recommender_utils import check_matrix
-from Utils.DataReader import load_urm, load_icm, load_merged_icm, get_k_folds_URM
+from Utils.DataReader import load_urm, load_icm
 
 res_dir = 'Experiments/csv'
 output_root_path = "Experiments/"

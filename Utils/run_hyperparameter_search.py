@@ -39,7 +39,7 @@ def read_data_split_and_search():
     URM_train, URM_test = split_train_in_two_percentage_global_sample(URM_all, train_percentage = 0.85)
     URM_train, URM_validation = split_train_in_two_percentage_global_sample(URM_train, train_percentage = 0.85)
 
-    output_folder_path = "Experiments/"
+    output_folder_path = "../Experiments/"
 
 
     # If directory does not exist, create

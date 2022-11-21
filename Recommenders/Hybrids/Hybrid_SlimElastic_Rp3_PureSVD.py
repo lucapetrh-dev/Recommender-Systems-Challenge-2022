@@ -95,8 +95,8 @@ class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
 
         self.score_matrix = alpha * self.mat_scores_slim + beta * self.mat_scores_rp3 + gamma * self.mat_scores_puresvd
 
-    def _compute_item_score(self, user_id_array, items_to_compute=None):
-        return self.score_matrix[user_id_array]
+    #def _compute_item_score(self, user_id_array, items_to_compute=None):
+    #    return self.score_matrix[user_id_array]
 
     def save_model(self, folder_path, file_name=None):
 

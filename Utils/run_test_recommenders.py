@@ -123,7 +123,7 @@ if __name__ == '__main__':
         GlobalEffects,
         UserKNNCFRecommender,
         ItemKNNCFRecommender,
-        #ItemKNNCBFRecommender,
+        ItemKNNCBFRecommender,
         P3alphaRecommender,
         RP3betaRecommender,
         SLIM_BPR_Cython,
