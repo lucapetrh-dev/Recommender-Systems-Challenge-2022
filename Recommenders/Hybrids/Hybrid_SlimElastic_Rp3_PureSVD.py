@@ -39,8 +39,8 @@ class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
 
     def fit_no_cached(self, path_slim, path_rp3, alpha=0.9, beta=0.1, gamma=0.1):
 
-        n_users = 13650
-        n_item = 18059
+        n_users = 41629
+        #n_item = 18059
         list_slim = []
         list_rp3 = []
         list_puresvd = []
@@ -55,6 +55,7 @@ class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
         mat_scores_rp3 = np.stack(list_rp3, axis=0)
         mat_scores_puresvd = np.stack(list_puresvd, axis=0)
 
+        """
         print("slim scores stats:")
         print("min = {}".format(mat_scores_slim.min()))
         print("max = {}".format(mat_scores_slim.max()))
@@ -67,6 +68,7 @@ class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
         print("min = {}".format(mat_scores_puresvd.min()))
         print("max = {}".format(mat_scores_puresvd.max()))
         print("average = {}".format(mat_scores_puresvd.mean()))
+        """
 
         # normalization
         # mat_scores_slim /= mat_scores_slim.max()
@@ -77,6 +79,7 @@ class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
         self.mat_scores_rp3 = mat_scores_rp3
         self.mat_scores_puresvd = mat_scores_puresvd
 
+        """
         print("slim scores stats:")
         print("min = {}".format(mat_scores_slim.min()))
         print("max = {}".format(mat_scores_slim.max()))
@@ -89,14 +92,15 @@ class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
         print("min = {}".format(mat_scores_puresvd.min()))
         print("max = {}".format(mat_scores_puresvd.max()))
         print("average = {}".format(mat_scores_puresvd.mean()))
+        """
 
         # np.save(path_slim, arr=mat_scores_slim)
         # np.save(path_rp3, arr=mat_scores_rp3)
 
         self.score_matrix = alpha * self.mat_scores_slim + beta * self.mat_scores_rp3 + gamma * self.mat_scores_puresvd
 
-    #def _compute_item_score(self, user_id_array, items_to_compute=None):
-    #    return self.score_matrix[user_id_array]
+    def _compute_item_score(self, user_id_array, items_to_compute=None):
+        return self.score_matrix[user_id_array]
 
     def save_model(self, folder_path, file_name=None):
 
