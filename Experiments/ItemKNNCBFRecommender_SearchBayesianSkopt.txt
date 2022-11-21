@@ -1,0 +1,236 @@
+SearchBayesianSkopt: Config 0 Exception. Config: {'topK': 858, 'shrink': 804, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 1 Exception. Config: {'topK': 515, 'shrink': 450, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 2 Exception. Config: {'topK': 168, 'shrink': 894, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Search interrupted. No valid config was found during the initial random initialization
+SearchBayesianSkopt: Config 0 Exception. Config: {'topK': 250, 'shrink': 946, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 1 Exception. Config: {'topK': 832, 'shrink': 242, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 2 Exception. Config: {'topK': 380, 'shrink': 963, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 3 Exception. Config: {'topK': 355, 'shrink': 319, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 4 Exception. Config: {'topK': 958, 'shrink': 186, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 5 Exception. Config: {'topK': 827, 'shrink': 225, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 6 Exception. Config: {'topK': 986, 'shrink': 252, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 7 Exception. Config: {'topK': 314, 'shrink': 399, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 8 Exception. Config: {'topK': 897, 'shrink': 477, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 9 Exception. Config: {'topK': 318, 'shrink': 161, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 10 Exception. Config: {'topK': 12, 'shrink': 344, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 11 Exception. Config: {'topK': 417, 'shrink': 555, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 12 Exception. Config: {'topK': 934, 'shrink': 690, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 13 Exception. Config: {'topK': 91, 'shrink': 801, 'similarity': 'cosine', 'normalize': True, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Config 14 Exception. Config: {'topK': 578, 'shrink': 597, 'similarity': 'cosine', 'normalize': False, 'feature_weighting': 'TF-IDF'} - Exception: Traceback (most recent call last):
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 468, in _objective_function
+    result_df, recommender_instance = self._evaluate_on_validation(current_fit_hyperparameters_dict, was_already_evaluated_flag, was_already_evaluated_index)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 326, in _evaluate_on_validation
+    recommender_instance, train_time = self._fit_model(current_fit_hyperparameters)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\HyperparameterTuning\SearchAbstractClass.py", line 294, in _fit_model
+    recommender_instance = self.recommender_class(*self.recommender_input_args.CONSTRUCTOR_POSITIONAL_ARGS,
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\KNN\ItemKNNCBFRecommender.py", line 26, in __init__
+    super(ItemKNNCBFRecommender, self).__init__(URM_train, ICM_train, verbose = verbose)
+  File "C:\Users\Luca\DataspellProjects\Recommender-Systems-Challenge-2022\Recommenders\BaseCBFRecommender.py", line 24, in __init__
+    assert self.n_items == ICM_train.shape[0], "{}: URM_train has {} items but ICM_train has {}".format(self.RECOMMENDER_NAME, self.n_items, ICM_train.shape[0])
+AssertionError: ItemKNNCBFRecommender: URM_train has 24507 items but ICM_train has 27968
+
+SearchBayesianSkopt: Search interrupted. No valid config was found during the initial random initialization
