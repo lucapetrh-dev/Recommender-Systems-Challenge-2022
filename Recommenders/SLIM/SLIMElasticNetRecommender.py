@@ -131,7 +131,7 @@ class SLIMElasticNetRecommender(BaseItemSimilarityMatrixRecommender):
         self.W_sparse = similarity_builder.get_SparseMatrix()
 
 
-
+"""
 from multiprocessing import Pool, cpu_count, shared_memory
 from functools import partial
 
@@ -141,7 +141,6 @@ def create_shared_memory(a):
     b = np.ndarray(a.shape, dtype=a.dtype, buffer=shm.buf)
     b[:] = a[:]
     return shm
-
 
 @ignore_warnings(category=ConvergenceWarning)
 def _partial_fit(items, topK, alpha, l1_ratio, urm_shape, positive_only=True, shm_names=None, shm_shapes=None, shm_dtypes=None):
@@ -201,8 +200,6 @@ def _partial_fit(items, topK, alpha, l1_ratio, urm_shape, positive_only=True, sh
     return values, rows, cols
 
 
-
-
 class MultiThreadSLIM_SLIMElasticNetRecommender(SLIMElasticNetRecommender):
 
     def fit(self, alpha=1.0, l1_ratio=0.1, positive_only=True, topK=100,
@@ -259,3 +256,5 @@ class MultiThreadSLIM_SLIMElasticNetRecommender(SLIMElasticNetRecommender):
         # generate the sparse weight matrix
         self.W_sparse = sps.csr_matrix((values, (rows, cols)), shape=(self.n_items, self.n_items), dtype=np.float32)
         self.URM_train = self.URM_train.tocsr()
+
+"""
