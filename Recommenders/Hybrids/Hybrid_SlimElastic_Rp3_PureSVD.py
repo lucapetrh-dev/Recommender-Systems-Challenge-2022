@@ -5,7 +5,7 @@ from Recommenders.DataIO import DataIO
 from Recommenders.Recommender_import_list import *
 from Recommenders.Recommender_utils import check_matrix
 
-output_root_path = "./result_experiments/"
+output_root_path = "./Experiments/"
 
 
 class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
@@ -21,11 +21,13 @@ class Hybrid_SlimElastic_Rp3_PureSVD(BaseRecommender):
         self.puresvd = PureSVDRecommender(URM_train)
 
     def fit(self, alpha=0.9, beta=0.1, gamma=0.1):
-        self.slim.load_model(output_root_path, file_name="slim742.zip")
+        # self.slim.load_model(output_root_path, file_name="slim742.zip")
         # self.slim.load_model(output_root_path, file_name="slimwithwrongevalsplit.zip")
-        self.puresvd.fit(num_factors=28)
+        self.puresvd.fit(num_factors=31) #hyperparameters updated
         # self.slim.fit(topK=453, l1_ratio=0.00029920499017254754, alpha=0.10734084960757517)
-        self.rp3.fit(topK=40, alpha=0.4208737801266599, beta=0.5251543657397256, normalize_similarity=True)
+        self.slim.fit(topK=405, l1_ratio=0.0010299956370568744, alpha=0.01) #hyperparameters updated
+        #self.rp3.fit(topK=40, alpha=0.4208737801266599, beta=0.5251543657397256, normalize_similarity=True)
+        self.rp3.fit(topK=167, alpha=1.0, beta=0.4520495673133021, implicit=True) #hyperparameters updated
         self.fit_no_cached(path_slim=None, path_rp3=None, alpha=alpha, beta=beta, gamma=gamma)
 
     def fit_cached(self, path_slim, path_rp3, path_cb, alpha=0.9, beta=0.1, gamma=0.1):

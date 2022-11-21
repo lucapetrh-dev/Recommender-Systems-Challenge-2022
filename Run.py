@@ -53,8 +53,8 @@ recommender_class_list = [
     # LightFMUserHybridRecommender, # UCM needed
     # LightFMItemHybridRecommender,
 
-    Hybrid_SlimElastic_Rp3,
-    # Hybrid_SlimElastic_Rp3_PureSVD,
+    # Hybrid_SlimElastic_Rp3,
+    Hybrid_SlimElastic_Rp3_PureSVD,
     # Hybrid_SlimElastic_Rp3_ItemKNNCF
     # Hybrid_SLIM_EASE_R_IALS
 
@@ -80,7 +80,6 @@ if not os.path.exists(output_root_path):
 
 logFile = open(output_root_path + "result_all_algorithms.txt", "a")
 
-
 def _get_instance(recommender_class, URM_train, ICM=None):
     if issubclass(recommender_class, BaseItemCBFRecommender) or issubclass(recommender_class,
                                                                            ScoresHybridRP3betaKNNCBF):
@@ -90,8 +89,6 @@ def _get_instance(recommender_class, URM_train, ICM=None):
 
     return recommender_object
 
-
-#I need to first run hyperparameter search and replace the values for the fitting
 def _get_params(recommender_object):
     if isinstance(recommender_object, ItemKNNCFRecommender):
         fit_params = {'topK': 189, 'shrink': 0, 'similarity': 'cosine', 'normalize': True,
@@ -138,7 +135,6 @@ def _get_params(recommender_object):
 
     return fit_params
 
-
 def evaluate_all_recommenders(URM_all, ICM=None):
     URM_train, URM_test = split_train_in_two_percentage_global_sample(URM_all=URM_all, train_percentage=0.85)
     evaluator = EvaluatorHoldout(URM_test, cutoff_list=[10])
@@ -169,67 +165,5 @@ def evaluate_all_recommenders(URM_all, ICM=None):
             logFile.flush()
 
 
-def evaluate_best_saved_model(URM_all, ICM=None):
-    URM_train, URM_test = split_train_in_two_percentage_global_sample(URM_all=URM_all, train_percentage=0.8)
-    evaluator = EvaluatorHoldout(URM_test, cutoff_list=[10])
-
-    if ICM is not None:
-        tmp = check_matrix(ICM.T, 'csr', dtype=np.float32)
-        URM_train = sps.vstack((URM_train, tmp), format='csr', dtype=np.float32)
-
-    # set here the recommender you want to use
-    recommender_object = SLIMElasticNetRecommender(URM_train)  # SLIMElasticNetRecommender(URM_train)
-
-    # rec_best_model_last.zip is the output of the run_hyperparameter_search (one best model for each rec class)
-    recommender_object.load_model(output_root_path, file_name="slim750group1.zip")
-
-    results_run, results_run_string = evaluator.evaluateRecommender(recommender_object)
-
-    print("Algorithm: {}, results: \n{}".format(recommender_object.RECOMMENDER_NAME, results_run_string))
-    logFile.write("Algorithm: {}, results: \n{}\n".format(recommender_object.RECOMMENDER_NAME, results_run_string))
-    logFile.flush()
-
-
-def evaluate_kfold(k=5):
-    URM_train_list, URM_test_list = get_k_folds_URM(k=k)
-    evaluator_list = [EvaluatorHoldout(URM_test, cutoff_list=[10]) for URM_test in URM_test_list]
-
-    MAP_list = []
-
-    for i in tqdm(range(k), desc='Evaluating k folds'):
-        recommender_object = HybridRatings_IALS_hybrid_EASE_R_hybrid_SLIM_Rp3(URM_train_list[i], fold=i)
-        fit_params = _get_params(recommender_object)
-        recommender_object.fit(**fit_params)
-
-        results_run, results_run_string = evaluator_list[i].evaluateRecommender(recommender_object)
-        MAP_list.append(float(results_run['MAP']))
-
-        print("Fold {} - Algorithm: {}, results: \n{}"
-              .format(i, recommender_object.RECOMMENDER_NAME, results_run_string))
-        logFile.write("Fold {} -Algorithm: {}, results: \n{}\n"
-                      .format(i, recommender_object.RECOMMENDER_NAME, results_run_string))
-
-        # saved_name = "{}-fold{}".format(recommender_object.RECOMMENDER_NAME, i)
-        # recommender_object.save_model(output_root_path, file_name=saved_name)
-
-    avg_MAP = sum(MAP_list) / k
-    diff_MAP = max(MAP_list) - min(MAP_list)
-    print("Average {}-fold MAP: {:.7f}, diff: {:.7f}".format(k, avg_MAP, diff_MAP))
-    logFile.write("Average {}-fold MAP: {:.7f}, diff: {:.7f}".format(k, avg_MAP, diff_MAP))
-    logFile.flush()
-
-
-def evaluate_all_ICMs(URM_all):
-    ICM_all = load_merged_icm()
-    evaluate_all_recommenders(URM_all, ICM_all)
-
-
-if __name__ == '__main__':
-    URM_all = load_urm()
-    # evaluate_kfold(k=5)
-    evaluate_all_recommenders(URM_all)
-    # evaluate_best_saved_model(URM_all)
-    # evaluate_all_ICMs(URM_all)
-#%%
-
-#%%
+URM_all = load_urm()
+evaluate_all_recommenders(URM_all)

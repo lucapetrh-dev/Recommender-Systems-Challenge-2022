@@ -5,7 +5,8 @@ from sklearn.utils._testing import ignore_warnings
 from Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
 from Recommenders.EASE_R.EASE_R_Recommender import EASE_R_Recommender
 from Recommenders.Hybrids.BaseHybridMultiRecommender import BaseHybridMultiRecommender
-from Recommenders.MatrixFactorization.IALSRecommender_implicit import IALSRecommender_implicit
+from Recommenders.MatrixFactorization.IALSRecommender\
+    import IALSRecommender
 from Recommenders.Recommender_utils import check_matrix
 from Recommenders.SLIM.SLIMElasticNetRecommender import SLIMElasticNetRecommender
 
@@ -26,7 +27,7 @@ class Hybrid_SLIM_EASE_R_IALS(BaseHybridMultiRecommender):
         recommender_2 = EASE_R_Recommender(URM_train)
         recommender_2.fit()
 
-        recommender_3 = IALSRecommender_implicit(URM_train)
+        recommender_3 = IALSRecommender(URM_train)
         recommender_3.fit()
 
         recommender_array = [recommender_1, recommender_2, recommender_3]
