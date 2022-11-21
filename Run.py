@@ -164,6 +164,6 @@ def evaluate_all_recommenders(URM_all, ICM=None):
             logFile.write("Algorithm: {} - Exception: {}\n".format(recommender_class.RECOMMENDER_NAME, str(e)))
             logFile.flush()
 
-
-URM_all = load_urm()
-evaluate_all_recommenders(URM_all)
+if __name__ == '__main__':
+    URM_all = load_urm()
+    evaluate_all_recommenders(URM_all)
