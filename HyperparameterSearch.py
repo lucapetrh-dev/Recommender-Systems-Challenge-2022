@@ -84,7 +84,7 @@ def runHyperparameterSearch_FeatureWeighting(recommender_class, URM_train, W_tra
                                              metric_to_optimize=None, cutoff_to_optimize=None,
                                              evaluator_validation_earlystopping=None, resume_from_saved=False,
                                              save_model="best",
-                                             output_folder_path="result_experiments/",
+                                             output_folder_path="Experiments/",
                                              similarity_type_list=None):
     # If directory does not exist, create
     if not os.path.exists(output_folder_path):
@@ -194,7 +194,7 @@ def runHyperparameterSearch_Hybrid(recommender_class, URM_train, W_train, ICM_ob
                                    evaluator_validation_earlystopping=None,
                                    evaluator_validation=None, evaluator_test=None, metric_to_optimize=None,
                                    cutoff_to_optimize=None,
-                                   output_folder_path="result_experiments/", parallelizeKNN=False, allow_weighting=True,
+                                   output_folder_path="Experiments/", parallelizeKNN=False, allow_weighting=True,
                                    similarity_type_list=None):
     """
     This function performs the hyperparameter optimization for a hybrid collaborative and content-based recommender
@@ -684,7 +684,7 @@ def runHyperparameterSearch_Content(recommender_class, URM_train, ICM_object, IC
                                     save_model="best", evaluate_on_test="best", max_total_time=None,
                                     evaluator_validation=None, evaluator_test=None, metric_to_optimize=None,
                                     cutoff_to_optimize=None,
-                                    output_folder_path="result_experiments/", parallelizeKNN=False,
+                                    output_folder_path="Experiments/", parallelizeKNN=False,
                                     allow_weighting=True, allow_bias_ICM=False,
                                     similarity_type_list=None):
     """
@@ -784,7 +784,7 @@ def runHyperparameterSearch_Collaborative(recommender_class, URM_train, URM_trai
                                           evaluator_validation=None, evaluator_test=None,
                                           evaluator_validation_earlystopping=None,
                                           metric_to_optimize=None, cutoff_to_optimize=None,
-                                          output_folder_path="result_experiments/", parallelizeKNN=True,
+                                          output_folder_path="Experiments/", parallelizeKNN=True,
                                           allow_weighting=True, allow_bias_URM=False, allow_dropout_MF=False,
                                           similarity_type_list=None):
     """

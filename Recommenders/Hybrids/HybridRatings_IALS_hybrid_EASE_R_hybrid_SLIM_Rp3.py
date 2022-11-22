@@ -14,7 +14,7 @@ class HybridRatings_IALS_hybrid_EASE_R_hybrid_SLIM_Rp3(BaseHybridRatings):
 
     def __init__(self, URM_train, fold=None):
         self.recommender_1 = HybridSimilarity_SLIM_Rp3(URM_train, fold)
-        ICM_event = load_icm("data_ICM_event.csv", weight=1)
+        ICM_event = load_icm()
         ICM_event = check_matrix(ICM_event.T, 'csr', dtype=np.float32)
         URM_ICM_event = sps.vstack((URM_train, ICM_event), format='csr', dtype=np.float32)
         self.recommender_2 = EASE_R_Recommender(URM_ICM_event)
