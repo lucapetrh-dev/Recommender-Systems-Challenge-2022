@@ -66,23 +66,11 @@ def read_data_split_and_search():
     ]
 
     hybrid_algorithm_list = [
-        # Hybrid_SlimElastic_Rp3,
-        # Hybrid_SlimElastic_Rp3_PureSVD,
-        # Hybrid_SlimElastic_Rp3_ItemKNNCF
-        # Hybrid_SLIM_EASE_R_IALS
-
-        # HybridSimilarity_SLIM_Rp3,
-        # HybridSimilarity_withSlimPerGroup
-        # HybridSimilarity_withGroupedusers
-        # HybridGrouping_SLIM_TopPop
-
-        # HybridRatings_SLIM_Rp3,
-        # HybridRatings_SLIM_EASE_R,
-        # HybridRatings_EASE_R_hybrid_SLIM_Rp3
-        # HybridRatings_PureSVD_EASE_R
-        # HybridRatings_SLIM_PureSVD_EASE_R
+        Hybrid_SlimElastic_Rp3_PureSVD,
+        HybridSimilarity_withGroupedusers,
+        Hybrid_SLIM_EASE_R_IALS,
+        HybridRatings_EASE_R_hybrid_SLIM_Rp3,
         HybridRatings_IALS_hybrid_EASE_R_hybrid_SLIM_Rp3
-        # MultiRecommender
     ]
 
     URM_all = load_urm()
@@ -163,4 +151,6 @@ def read_data_split_and_search():
 
 if __name__ == '__main__':
     read_data_split_and_search()
+#%%
+
 #%%

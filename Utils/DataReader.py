@@ -52,12 +52,12 @@ def load_merged_icm():
 
 
 def load_icm_df():
-    df_original = pd.read_csv("Dataset/data_ICM_length.csv",
+    df_original = pd.read_csv("Dataset/data_ICM_type.csv",
                               header=1,
                               dtype={0: np.int32,
                                      1: np.int32,
                                      2: np.int32})
-    df_original.columns = ["ItemID", "FeatureID", "Data"]
+    df_original.columns = ["ItemID", "Type", "Data"]
     # print("Resultant CSV after joining all CSV files at a particular location...")
     return df_original
 
