@@ -6,7 +6,7 @@ import scipy.sparse as sps
 
 from Data_manager.split_functions.split_train_validation_random_holdout import split_train_in_two_percentage_global_sample
 from Evaluation.Evaluator import EvaluatorHoldout
-from HyperparameterTuning.run_hyperparameter_search import runHyperparameterSearch_Collaborative, \
+from HyperparameterTuning.HyperparameterSearch import runHyperparameterSearch_Collaborative, \
     runHyperparameterSearch_Content, runHyperparameterSearch_Hybrid
 from Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
 from Recommenders.Hybrids.HybridRatings_EASE_R_hybrid_SLIM_Rp3 import HybridRatings_EASE_R_hybrid_SLIM_Rp3
