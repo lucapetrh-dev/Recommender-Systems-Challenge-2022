@@ -22,6 +22,7 @@ from Recommenders.Hybrids.Hybrid_SlimElastic_Rp3 import Hybrid_SlimElastic_Rp3
 from Recommenders.Hybrids.Hybrid_SlimElastic_Rp3_PureSVD import Hybrid_SlimElastic_Rp3_PureSVD
 from Recommenders.Hybrids.scores.ScoresHybridRP3betaKNNCBF import ScoresHybridRP3betaKNNCBF
 from Recommenders.Recommender_import_list import *
+from Recommenders.Recommender_utils import check_matrix
 from Utils.DataReader import load_urm, load_icm, get_k_folds_URM
 
 output_folder_path = "Experiments/"
@@ -52,11 +53,8 @@ def read_data_split_and_search():
         # MatrixFactorization_FunkSVD_Cython,
         # PureSVDRecommender,
         # SLIM_BPR_Cython,
-        # SLIM_BPR_Cython
         # SLIMElasticNetRecommender,
-        # IALSRecommender
-        # MultVAERecommender
-        # IALSRecommender_implicit
+        # IALSRecommender,
         # EASE_R_Recommender
     ]
 
@@ -66,10 +64,19 @@ def read_data_split_and_search():
     ]
 
     hybrid_algorithm_list = [
+        LightFMCFRecommender,
+        LightFMItemHybridRecommender,
+
+        Hybrid_SlimElastic_Rp3,
         Hybrid_SlimElastic_Rp3_PureSVD,
-        HybridSimilarity_withGroupedusers,
         Hybrid_SLIM_EASE_R_IALS,
+
+        HybridSimilarity_SLIM_Rp3,
+        HybridSimilarity_withGroupedusers,
+
+        HybridRatings_SLIM_Rp3,
         HybridRatings_EASE_R_hybrid_SLIM_Rp3,
+        HybridRatings_SLIM_PureSVD_EASE_R,
         HybridRatings_IALS_hybrid_EASE_R_hybrid_SLIM_Rp3
     ]
 
