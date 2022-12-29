@@ -12,11 +12,6 @@ Each TV show (for instance, "The Big Bang Theory") can be composed by several ep
 The datasets includes around 1.8M interactions, 41k users, 27k items (TV shows) and two features: the TV shows length (number of episodes or movies) and 4 categories. For some user interactions the data also includes the impressions, representing which items were available on the screen when the user clicked on that TV shows.
 The training-test split is done via random holdout, 85% training, 15% test. The goal is to recommend a list of 10 potentially relevant items for each user. MAP@10 is used for evaluation.
 
-## 👤 Team
-
-* Luca Petracca
-* Emanuele Paci
-
 Prof. Paolo Cremonesi
 
 ## 🔨 Tools and Languages
