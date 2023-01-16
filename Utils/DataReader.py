@@ -86,7 +86,7 @@ def load_merged_icm_df():
 
 
 def load_urm_df():
-    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/URM_Binary_Ratings.csv')
+    urm_path = os.path.join(os.path.dirname(__file__), '../Dataset/Edited/URM_Binary_Ratings.csv')
     df_original = pd.read_csv(filepath_or_buffer=urm_path)
 
     df_original.columns = ["UserID", "ItemID", "Data"]
