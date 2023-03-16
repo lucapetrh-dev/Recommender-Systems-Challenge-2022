@@ -12,26 +12,27 @@ Each TV show (for instance, "The Big Bang Theory") can be composed by several ep
 The datasets includes around 1.8M interactions, 41k users, 27k items (TV shows) and two features: the TV shows length (number of episodes or movies) and 4 categories. For some user interactions the data also includes the impressions, representing which items were available on the screen when the user clicked on that TV shows.
 The training-test split is done via random holdout, 85% training, 15% test. The goal is to recommend a list of 10 potentially relevant items for each user. 
 
-Note that Recommenders come from [this repository](https://github.com/MaurizioFD/RecSys_Course_AT_PoliMi)
+Note that Recommenders come from [this repository](https://github.com/MaurizioFD/RecSys_Course_AT_PoliMi).
 
 ## Best Model
 
 The best model for my best submission is a hybrid model consisting of various models with distinct hyperparameters, each one individually trained. The models are trained on a stacked URM-ICM matrix, using both information regarding users and regarding features. 
 
-!(https://imgur.com/ceYJgUk)
+![](https://i.imgur.com/ceYJgUk.jpg)
 
 Specifically, the best model was built using the following models: 
 * SLIM ElasticNet
 * RP3-Beta
 * EASE-R
+
 The model building process was incremental, with the SLIM ElasticNet model initially outperforming the others. However, by combining the results of each model with a weighted sum of the scores, I was able to achieve increasingly better outcomes.
 
 ## Results
 
 The evaluation metric was MAP@10.
 
-*Private Leaderboard Final Position: **14/93** (score: 0.05957)
-*Public Leaderboard Final Position: **17/93** (score: 0.06005)
+* Private Leaderboard Final Position: **14/93** (score: 0.05957)
+* Public Leaderboard Final Position: **17/93** (score: 0.06005)
 
 ## Tools and Languages
 
@@ -40,5 +41,5 @@ The evaluation metric was MAP@10.
 
 ## Credits
 
-Prof. Paolo Cremonesi 
-Prof. Maurizio Ferrari Dacrema
+* Prof. Paolo Cremonesi 
+* Prof. Maurizio Ferrari Dacrema
