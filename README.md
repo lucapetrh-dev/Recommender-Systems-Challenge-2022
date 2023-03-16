@@ -16,7 +16,7 @@ Note that Recommenders come from [this repository](https://github.com/MaurizioFD
 
 ## Best Model
 
-The best model for my best submission is a hybrid model consisting of various models with distinct hyperparameters, each one individually trained. The models are trained on a stacked URM-ICM matrix, using both information regarding users and regarding features. 
+The [best model](https://github.com/lucapetrh-dev/Recommender-Systems-Challenge-2022/blob/main/Notebooks/Hybrid%20Recommenders/SLIM%20ElasticNet-rp3Beta-EASE_R%20Hybrid.ipynb) for my best submission is a hybrid model consisting of various models with distinct hyperparameters, each one individually trained. The models are trained on a stacked URM-ICM matrix, using both information regarding users and regarding features. 
 
 ![](https://i.imgur.com/ceYJgUk.jpg)
 
